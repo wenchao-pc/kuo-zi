@@ -1,0 +1,28 @@
+{
+  "name": "study",
+  "description": "study",
+  "main": "index.js",
+  "authors": [
+    "kuo-zi"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "gulp"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "fontawesome#^4.6.1",
+    "react": "^15.0.1",
+    "angular": "^1.5.5",
+    "babel": "*"
+  }
+}
