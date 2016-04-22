@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>react-hello</title>
+    <link href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .panel{
+            height: 200px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+<div class="col-lg-12">
+    <h3>React组件:</h3>
+</div>
+
+<div class="col-lg-4">
+    <div class="panel panel-default" style="height: auto">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <div>分页</div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div id="page"></div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <div>交互</div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div id="LinkButton"></div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <div>复合组件</div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div id="Avatar"></div>
+        </div>
+    </div>
+</div>
+
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../bower_components/react/react.min.js"></script>
+<script src="../../bower_components/react/react-dom.min.js"></script>
+<script src="../../bower_components/babel/browser.min.js"></script>
+<script src="../../js/react/react.jsx" type="text/babel"></script>
+</body>
+</html>

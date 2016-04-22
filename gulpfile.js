@@ -51,5 +51,5 @@ gulp.task('watch', function () {
         open: false
     });
     gulp.watch('css/*.less', ['less']).on('change', reload);
-    gulp.watch(['index.html', 'view/**', 'mock/**']).on('change', reload);
+    gulp.watch(['index.html', 'view/**', 'js/**','mock/**']).on('change', reload);
 });
