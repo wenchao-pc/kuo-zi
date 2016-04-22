@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>react-hello</title>
+    <link href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container-fluid">
+<div class="col-lg-12">
+    <h3>React组件:</h3>
+</div>
+<div class="col-lg-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <div>hello react</div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div id="hello"></div>
+            <pre>
+                <code>
+                var hello = "hello react";
+                ReactDOM.render(
+                        &lt;div>
+                            &lt;h1>{hello}&lt;/h1>
+                        &lt;/div>,
+                        document.querySelector("#hello")
+                    );
+                </code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <div>分页</div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div id="page"></div>
+                <pre>
+                    var Page = React.createClass({
+                        render: function () {
+                        return (
+                        &lt;nav>
+                            &lt;ul className="pagination">
+                                &lt;li>
+                                    &lt;a href="#">&laquo;&lt;/a>
+                                &lt;/li>
+                                &lt;li>
+                                    &lt;a href="#">1&lt;/a>
+                                &lt;/li>
+                                &lt;li>
+                                    &lt;a href="#">2&lt;/a>
+                                &lt;/li>
+                                &lt;li>
+                                    &lt;a href="#">3&lt;/a>
+                                &lt;/li>
+                                &lt;li>
+                                    &lt;a href="#">4&lt;/a>
+                                &lt;/li>
+                                &lt;li>
+                                    &lt;a href="#">5&lt;/a>
+                                &lt;/li>
+                                &lt;li>
+                                    &lt;a href="#">&raquo;&lt;/a>
+                                &lt;/li>
+                            &lt;/ul>
+                        &lt;/nav>
+                            );
+                        }
+                    });
+                    ReactDOM.render(
+                            &lt;Page/>,
+                            document.querySelector("#page")
+                    );
+                </pre>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <div>交互</div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div id="LinkButton"></div>
+            <pre style="margin-top: 20px">
+                var LinkButton = React.createClass({
+                    getInitialState: function () {
+                        return {like: false};
+                    },
+                    onClick: function () {
+                        this.setState({like: !this.state.like});
+                    },
+                    render: function () {
+                        var text = "我" + (this.state.like ? "喜欢" : "不喜欢") + "react";
+                        return (
+                                &lt;div>
+                                    &lt;p>{text}&lt;/p>
+                                    &lt;button onClick={this.onClick}
+                                            className="btn btn-default">
+                                    {this.state.like ? "喜欢" : "不喜欢"}&lt;/button>
+                                &lt;/div>
+                        );
+                    }
+                });
+                ReactDOM.render(
+                        &lt;LinkButton/>,
+                        document.querySelector("#LinkButton")
+                );
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <div>复合组件</div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div id="Avatar"></div>
+            <pre style="margin-top: 20px">
+                var LinkButton = React.createClass({
+                    getInitialState: function () {
+                        return {like: false};
+                    },
+                    onClick: function () {
+                        this.setState({like: !this.state.like});
+                    },
+                    render: function () {
+                        var text = "我" + (this.state.like ? "喜欢" : "不喜欢") + "react";
+                        return (
+                                &lt;div>
+                                    &lt;p>{text}&lt;/p>
+                                    &lt;button onClick={this.onClick}
+                                            className="btn btn-default">
+                                    {this.state.like ? "喜欢" : "不喜欢"}&lt;/button>
+                                &lt;/div>
+                        );
+                    }
+                });
+                ReactDOM.render(
+                        &lt;LinkButton/>,
+                        document.querySelector("#LinkButton")
+                );
+            </pre>
+        </div>
+    </div>
+</div>
+
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../bower_components/react/react.min.js"></script>
+<script src="../../bower_components/react/react-dom.min.js"></script>
+<script src="../../bower_components/babel/browser.min.js"></script>
+<script type="text/babel">
+    var hello = "hello react";
+    ReactDOM.render(
+            <div>
+                <h1>{hello}</h1>
+            </div>,
+            document.querySelector("#hello")
+    );
+
+    $.ajax({
+        url: "../../page.do",
+        dataType: "post",
+        success: function (data) {
+
+        },
+        error: function () {
+
+        }
+    });
+
+    var Page = React.createClass({
+        render: function () {
+            return (
+                    <nav>
+                        <ul className="pagination">
+                            <li>
+                                <a href="#">&laquo;</a>
+                            </li>
+                            <li>
+                                <a href="#">1</a>
+                            </li>
+                            <li>
+                                <a href="#">2</a>
+                            </li>
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+                            <li>
+                                <a href="#">4</a>
+                            </li>
+                            <li>
+                                <a href="#">5</a>
+                            </li>
+                            <li>
+                                <a href="#">&raquo;</a>
+                            </li>
+                        </ul>
+                    </nav>
+            );
+        }
+    });
+    ReactDOM.render(
+            <Page/>,
+            document.querySelector("#page")
+    );
+
+    var LinkButton = React.createClass({
+        getInitialState: function () {
+            return {like: false};
+        },
+        onClick: function () {
+            this.setState({like: !this.state.like});
+        },
+        render: function () {
+            var text = "我" + (this.state.like ? "喜欢" : "不喜欢") + "react";
+            return (
+                    <div>
+                        <p>{text}</p>
+                        <button onClick={this.onClick}
+                                className="btn btn-default">
+                            {this.state.like ? "喜欢" : "不喜欢"}</button>
+                    </div>
+            );
+        }
+    });
+    ReactDOM.render(
+            <LinkButton/>,
+            document.querySelector("#LinkButton")
+    );
+
+    var ProfilePic = React.createClass({
+        render: function () {
+            return (<img src={"../../imgs/icon-"+this.props.img+".png"}/>)
+        }
+    });
+
+    var ProfileLink = React.createClass({
+        render: function () {
+            return (<a className="btn btn-primary" href={"https://www."+this.props.url.url+".com"}
+                       target="_bank">{this.props.url.name}</a>)
+        }
+    });
+
+    var Avatar = React.createClass({
+        render: function () {
+            return (
+                    <div>
+                        <ProfilePic img="1"/>
+                        <ProfileLink url={{url:"baidu",name:"百度"}}></ProfileLink>
+                    </div>
+            )
+        }
+    });
+    ReactDOM.render(
+            <Avatar/>,
+            document.querySelector("#Avatar")
+    );
+</script>
+</body>
+</html>

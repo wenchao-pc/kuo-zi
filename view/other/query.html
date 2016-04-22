@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>公交卡余额查询</title>
+</head>
+<body>
+<div>
+    <input id="num" type="text" value="13956781115">
+    <button id="query">查询</button>
+</div>
+<script src="../../bower_components/zepto/zepto.min.js"></script>
+<script>
+    var query=function () {
+        $.ajax({
+            url:"http://220.248.75.36/handapp/PGcardAmtServlet?arg1="+$("#num").val(),
+            dataType:"jsonp",
+            success:function (data) {
+                alert(data);
+            }
+        })
+    };
+    $("#query").on("click",query);
+
+</script>
+</body>
+</html>
