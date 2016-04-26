@@ -7,8 +7,9 @@
   },
   "page.do":{
     "totalSize":320,
-    "list|20": [{
+    "list|10": [{
       "id|+1": 1,
+      "name":"@NAME",
       "email": "@EMAIL"
     }]
   }

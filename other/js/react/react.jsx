@@ -14,10 +14,10 @@ var Page = React.createClass({
                 success: function (data) {
                     this.setState({
                         info: data.info.list,
-                        totalPage: Math.ceil(data.info.totalSize / 20),
+                        totalPage: Math.ceil(data.info.totalSize / 10),
                         totalSize: data.info.totalSize,
                         currPage: currPage,
-                        init:false
+                        init: false
                     });
                 }.bind(this)
             })
@@ -29,12 +29,11 @@ var Page = React.createClass({
             return false;
         }
         var trs = [];
-        console.log(this.state);
-        console.log(this.state.info);
         for (var i = 0; i < this.state.info.length; i++) {
             trs.push(
                 <tr>
                     <td>{this.state.info[i].id}</td>
+                    <td>{this.state.info[i].name}</td>
                     <td>{this.state.info[i].email}</td>
                 </tr>
             )
@@ -155,7 +154,6 @@ var Page = React.createClass({
         );
     }
 });
-
 
 var LinkButton = React.createClass({
     getInitialState: function () {

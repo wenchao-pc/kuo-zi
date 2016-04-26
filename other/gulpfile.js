@@ -5,6 +5,9 @@ var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 var Mock = require("mockjs");
 var dataPlug = require("gulp-data");
+var path=require("path");
+var named=require("vinyl-named");
+var webpack=require("webpack-stream");
 
 gulp.task('less', function () {
     gulp.src('css/style.less')
@@ -15,6 +18,17 @@ gulp.task('less', function () {
         .pipe(reload({stream: true}));
 });
 
+// gulp.task("react-package-dev",function () {
+//     gulp.src("./js/react/react.jsx")
+//         .pipe(named())
+//         .pipe(webpack({
+//             watch:true,
+//             module:{
+//
+//             }
+//         }))
+// });
+
 var Return = function (data, code, msg) {
     return {
         info: data || null,
@@ -24,6 +38,21 @@ var Return = function (data, code, msg) {
 };
 
 gulp.task('watch', function () {
+    // module.exports = {
+    //     entry: "./index.js",
+    //     output: {
+    //         path: path.join(__dirname, "./dist"),
+    //         filename: 'app.js'
+    //     },
+    //     resolve: {
+    //         extensions: ["", ".js", ".jsx"]
+    //     },
+    //     module: {
+    //         loaders: [
+    //             {test: /\.js|jsx$/, loaders: ["babel"]}
+    //         ]
+    //     }
+    // };
     browserSync.init({
         server: {
             baseDir: './',
@@ -51,5 +80,5 @@ gulp.task('watch', function () {
         open: false
     });
     gulp.watch('css/*.less', ['less']).on('change', reload);
-    gulp.watch(['index.html', 'view/**', 'js/**','mock/**']).on('change', reload);
+    gulp.watch(['index.html', "gulpfile.js",'view/**', 'js/**','mock/**']).on('change', reload);
 });
