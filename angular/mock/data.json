@@ -1,0 +1,32 @@
+{
+  "get_side_list.do": [
+    {
+      "id": "i1",
+      "title": "caidan1",
+      "link": [
+        {
+          "info": "link1-1",
+          "url": "index.page1"
+        },
+        {
+          "info": "link1-2",
+          "url": "index.page2"
+        }
+      ]
+    },
+    {
+      "id": "i2",
+      "title": "caidan2",
+      "link": [
+        {
+          "info": "link2-1",
+          "url": "index.page1"
+        },
+        {
+          "info": "link2-2",
+          "url": "index.page2"
+        }
+      ]
+    }
+  ]
+}

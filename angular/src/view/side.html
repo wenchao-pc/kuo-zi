@@ -1,0 +1,20 @@
+<div class="side" ng-controller="side_ctrl">
+    <div class="panel-group">
+        <div class="panel panel-default" ng-init="showCollapse(items[0].id)" ng-repeat="item in items">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a ng-click="showCollapse(item.id)">
+                        {{item.title}}
+                    </a>
+                </h4>
+            </div>
+            <div ng-class="{in:inClass==item.id}" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul>
+                        <li ng-repeat="link in item.link"><a ui-sref="{{link.url}}">{{link.info}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

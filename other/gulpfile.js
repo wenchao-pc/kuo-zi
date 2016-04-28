@@ -77,7 +77,8 @@ gulp.task('watch', function () {
             }
         },
         // startPath:"kuo-zi",
-        open: false
+        open: false,
+        port:3200
     });
     gulp.watch('css/*.less', ['less']).on('change', reload);
     gulp.watch(['index.html', "gulpfile.js",'view/**', 'js/**','mock/**']).on('change', reload);

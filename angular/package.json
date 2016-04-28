@@ -1,0 +1,25 @@
+{
+  "name": "angular-k",
+  "version": "1.0.0",
+  "description": "angular",
+  "main": "index.js",
+  "dependencies": {
+    "gulp-marked": "^1.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.5",
+    "gulp": "^3.9.1",
+    "gulp-data": "^1.2.1",
+    "gulp-markdown-docs": "^0.1.5",
+    "marked": "^0.3.5",
+    "mockjs": "^1.0.1-beta2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "kuo zi",
+  "license": "MIT"
+}

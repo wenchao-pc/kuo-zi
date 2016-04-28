@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>angular</title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        a {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div ng-app="app">
+    <div ui-view="header"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3" ui-view="side"></div>
+            <div class="col-sm-9" ui-view="main"></div>
+        </div>
+    </div>
+    <div ui-view="footer"></div>
+</div>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+<script src="src/js/app.js"></script>
+<script src="src/js/config/route_.js"></script>
+<script src="src/js/config/restUrl.js"></script>
+
+<script src="src/js/controllers/headerCtrl.js"></script>
+<script src="src/js/controllers/sideCtrl.js"></script>
+
+</body>
+</html>
