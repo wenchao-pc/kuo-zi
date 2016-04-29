@@ -11,12 +11,17 @@
         a {
             cursor: pointer;
         }
+
+        ul {
+            padding-left: 5px;
+            list-style-type: none;
+        }
     </style>
 </head>
 <body>
 <div ng-app="app">
     <div ui-view="header"></div>
-    <div class="container">
+    <div class="container" style="margin-bottom: 50px;">
         <div class="row">
             <div class="col-sm-3" ui-view="side"></div>
             <div class="col-sm-9" ui-view="main"></div>

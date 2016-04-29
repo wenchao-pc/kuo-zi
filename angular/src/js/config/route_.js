@@ -17,19 +17,14 @@ angular.module("app.router", ["ui.router"])
                     templateUrl: "src/view/footer.html"
                 }
             }
-        }).state("index.page1", {
-            url: "/index.page1",
+        }).state("index.main", {
+            url: "/main/:page",
             views: {
                 "page":{
-                    templateUrl: "src/view/demo/page1.html"
+                    templateUrl: function (e) {
+                        return "src/view/mainTpls/" + e.page + ".html";
+                    }
                 }
             }
-        }).state("index.page2", {
-            url: "/index.page2",
-            views: {
-                "page":{
-                    templateUrl: "src/view/demo/page2.html"
-                }
-            }
-        });
+        })
     });
